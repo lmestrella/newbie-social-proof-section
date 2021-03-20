@@ -1,0 +1,22 @@
+@mixin font-base($color, $size, $height: inherit) {
+  color: $color;
+  font-size: $size;
+  line-height: $height;
+}
+@mixin not-last-type($selector) {
+  & #{$selector}:not(:last-of-type) {
+    @content;
+  }
+}
+@mixin pseudo($elem, $position: inherit, $content: "") {
+  &::#{$elem} {
+    content: $content;
+    position: $position;
+    @content;
+  }
+}
+@mixin breakpoint($size) {
+  @media (min-width: map-get($map: $breakpoints, $key: $size)) {
+    @content;
+  }
+}

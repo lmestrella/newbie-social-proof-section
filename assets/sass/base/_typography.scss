@@ -1,0 +1,55 @@
+body {
+  font-family: "Spartan", sans-serif;
+}
+
+.intro {
+  text-align: center;
+
+  &__headline {
+    @include font-base($very-dark-magenta, 1.75rem, 1);
+    @include breakpoint(medium) {
+      font-size: 2.5rem;
+    }
+    @include breakpoint(large) {
+      font-size: 2.625rem;
+    }
+  }
+  &__details {
+    @include font-base($dark-grayish-magenta, 0.875rem, 1.5);
+  }
+  @include breakpoint(medium) {
+    text-align: left;
+  }
+}
+
+.rating {
+  text-align: center;
+  @include breakpoint(medium) {
+    text-align: left;
+  }
+  h4 {
+    @include font-base($very-dark-magenta, $font-small);
+  }
+}
+
+.testimony {
+  &__author {
+    h4 {
+      @include font-base($white, $font-small);
+    }
+    span {
+      @include font-base(rgba($soft-pink, 0.7), $font-small);
+    }
+  }
+  &__quote {
+    p::before {
+      content: "\201C";
+    }
+    p::after {
+      content: "\201D";
+    }
+    p {
+      @include font-base($white, $font-small, 1.7);
+    }
+  }
+}

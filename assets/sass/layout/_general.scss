@@ -1,0 +1,37 @@
+html {
+  @include breakpoint(small) {
+    font-size: 18px;
+  }
+  @include breakpoint(medium) {
+    font-size: 16px;
+  }
+}
+body {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 5em 1.5em;
+
+  @include breakpoint(medium) {
+    max-height: 100vh;
+  }
+}
+.container {
+  min-width: 16em;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(small) {
+    max-width: 32.625em;
+  }
+  @include breakpoint(medium) {
+    max-width: 80%;
+    // max-width: 56.25em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "intro rating"
+      "testimony testimony";
+  }
+}
