@@ -97,7 +97,7 @@ body {
 }
 
 .testimony__author span {
-  color: rgba(238, 104, 164, 0.7);
+  color: #ee68a4;
   font-size: 0.8125rem;
   line-height: inherit;
 }
@@ -134,6 +134,48 @@ body {
   display: grid;
   place-items: center;
   padding: 5em 1.5em;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 60%;
+  min-width: 23.4375em;
+  height: 100%;
+  background: url("../images/bg-pattern-top-mobile.svg") no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+
+@media (min-width: 64em) {
+  body::before {
+    background: url("../images/bg-pattern-top-desktop.svg") no-repeat;
+    width: 60%;
+    height: 55%;
+  }
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/bg-pattern-bottom-mobile.svg") no-repeat bottom right;
+  background-size: contain;
+  z-index: -1;
+}
+
+@media (min-width: 64em) {
+  body::after {
+    background: url("../images/bg-pattern-bottom-desktop.svg") no-repeat bottom right;
+    height: 100%;
+  }
 }
 
 @media (min-width: 64em) {
@@ -284,13 +326,13 @@ section:not(:first-of-type) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding-top: 4.875em;
+    padding-top: 3.875em;
   }
 }
 
 .rating__card {
   padding: 1em;
-  background-color: rgba(238, 104, 164, 0.1);
+  background-color: #f7f2f7;
   border-radius: 0.5em;
 }
 
@@ -309,9 +351,23 @@ section:not(:first-of-type) {
   }
 }
 
+.rating__card h4::before {
+  content: "";
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 10px 0;
+  background-image: url("../images/icon-star.svg"), url("../images/icon-star.svg"), url("../images/icon-star.svg"), url("../images/icon-star.svg"), url("../images/icon-star.svg");
+  background-repeat: no-repeat;
+  background-position: top left 50%, top left calc(50% - 22px), top left calc(50% - 44px), top left calc(50% + 22px), top left calc(50% + 44px);
+  margin-bottom: 0.5em;
+}
+
 @media (min-width: 64em) {
-  .rating__card h4 {
+  .rating__card h4::before {
     display: inline-block;
+    margin: 0;
+    width: 40%;
     vertical-align: top;
   }
 }

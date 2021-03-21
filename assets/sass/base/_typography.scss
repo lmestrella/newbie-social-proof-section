@@ -38,7 +38,7 @@ body {
       @include font-base($white, $font-small);
     }
     span {
-      @include font-base(rgba($soft-pink, 0.7), $font-small);
+      @include font-base($soft-pink, $font-small);
     }
   }
   &__quote {
